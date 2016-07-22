@@ -4,7 +4,7 @@
   "description": "## Setup",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape js/spec/testSpec.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -16,11 +16,22 @@
     "url": "https://github.com/nss-day-cohort-14/modern-js-quiz-wacraven/issues"
   },
   "homepage": "https://github.com/nss-day-cohort-14/modern-js-quiz-wacraven#readme",
+  "Dependencies": {
+    "jquery": ""
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.1",
     "gulp-watch": "^4.3.8",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
     "jshint": "^2.9.2",
-    "jshint-stylish": "^2.2.0"
+    "jshint-stylish": "^2.2.0",
+    "tape": "",
+    "browserify": "",
+    "watchify": "",
+    "lodash.assign": "^4.0.9",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Robot Battledome</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/4.1.1/normalize.css">
+	<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+		<div id="header">
+			<h1>Welcome to the BattleDome!</h1>
+			<h5>Start by giving names to the robots below!</h5>
+		</div>
+	<div id="container">
+		<div id="selectDiv">
+			<div id="robot1">
+				<label for="robot1Name">Name for the First Robot:</label>
+				<input type="text" name="robot1Name" id="robot1Name" placeholder="Name">
+				<div id="outputEl-robot1">
+					<div class="typeBtnDiv">
+						<button type="button" class="typeBtn1 hidden" value="drone">Drone</button>
+						<button type="button" class="typeBtn1 hidden" value="tank">Tank</button>
+						<button type="button" class="typeBtn1 hidden" value="walker">Walker</button>
+					</div>
+					<div class="classBtnDiv">
+						<button type="button" class="classBtn1 droneClass1 hidden" value="Quadcopter">Quadcopter</button>
+						<button type="button" class="classBtn1 droneClass1 hidden" value="FixedWing">Fixed Wing</button>
+						<button type="button" class="classBtn1 tankClass1 hidden" value="Wedge">Wedge</button>
+						<button type="button" class="classBtn1 tankClass1 hidden" value="Hybrid">Hybrid</button>
+						<button type="button" class="classBtn1 walkerClass1 hidden" value="Bipedal">Bipedal</button>
+						<button type="button" class="classBtn1 walkerClass1 hidden" value="Crab">Crab</button>
+					</div>
+
+					<button type="button" class="buildBtn1 hidden">Build that bot!</button>
+				</div>
+			</div>
+			<div class="fightBtnDiv">
+				<button type="button" class="fightBtn hidden" value="Fight">Fight!</button>
+			</div>
+			<div id="robot2">
+				<label for="robot2Name">Name for the Second Robot:</label>
+				<input type="text" name="robot2Name" id="robot2Name" placeholder="Name">
+				<div id="outputEl-robot2">
+					<div class="typeBtnDiv">
+						<button type="button" class="typeBtn2 hidden" value="drone">Drone</button>
+						<button type="button" class="typeBtn2 hidden" value="tank">Tank</button>
+						<button type="button" class="typeBtn2 hidden" value="walker">Walker</button>
+					</div>
+					<div class="classBtnDiv">
+						<button type="button" class="classBtn2 droneClass2 hidden" value="Quadcopter">Quadcopter</button>
+						<button type="button" class="classBtn2 droneClass2 hidden" value="FixedWing">Fixed Wing</button>
+						<button type="button" class="classBtn2 tankClass2 hidden" value="Wedge">Wedge</button>
+						<button type="button" class="classBtn2 tankClass2 hidden" value="Hybrid">Hybrid</button>
+						<button type="button" class="classBtn2 walkerClass2 hidden" value="Bipedal">Bipedal</button>
+						<button type="button" class="classBtn2 walkerClass2 hidden" value="Crab">Crab</button>
+					</div>
+					<button type="button" class="buildBtn2 hidden">Build that bot!</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="fightDiv">
+			<div class="robot1Div">
+				
+			</div>
+			<div class="robot2Div">
+				
+			</div>
+		</div>
+	</div>
+	<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="dist/bundle.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 "use strict";
+//tightness = 100%
 
 const NewRobot = require('./botBuilder');
 const app = require('./app');
@@ -6,27 +7,27 @@ const app = require('./app');
 let robot1Class = null;
 let robot2Class = null;
 
-$('#robot1Name').on('keyup', (key) => {
+$('#robot1Name').on('keyup', (key) => { // allows for picking type of bot after name has been entered
 	$('.typeBtn1').removeClass('hidden');
 });
 
-$('#robot2Name').on('keyup', (key) => { 
+$('#robot2Name').on('keyup', (key) => { // allows for picking type of bot after name has been entered
 	$('.typeBtn2').removeClass('hidden');
 });
 
-$('.typeBtn1').on('click', function(event) {
+$('.typeBtn1').on('click', function(event) { //unhides appropriate class buttons based on type button that was clicked
 	let currentBtn = $(this).prop('value');
 	$('.classBtn1').addClass('hidden');
 	$(`.${currentBtn}Class1`).removeClass('hidden');
 });
 
-$('.typeBtn2').on('click', function(event) {
+$('.typeBtn2').on('click', function(event) { //unhides appropriate class buttons based on type button that was clicked
 	let currentBtn = $(this).prop('value');
 	$('.classBtn2').addClass('hidden');
 	$(`.${currentBtn}Class2`).removeClass('hidden');
 });
 
-$('.classBtn1').on('click', function(event) {
+$('.classBtn1').on('click', function(event) { //checks to see which class was clicked and instantiates new bot accordingly. sends that data to the robot builder function in app.js
 	let currentBtn = $(this).prop('value');
 	let fightBtn = $('.fightBtn');
 	if (currentBtn === 'Quadcopter') {
@@ -50,7 +51,7 @@ $('.classBtn1').on('click', function(event) {
 	}
 });
 
-$('.classBtn2').on('click', function(event) {
+$('.classBtn2').on('click', function(event) { //checks to see which class was clicked and instantiates new bot accordingly. sends that data to the robot builder function in app.js
 	let currentBtn = $(this).prop('value');
 	let fightBtn = $('.fightBtn');
 	if (currentBtn === 'Quadcopter') {

@@ -1,4 +1,5 @@
 "use strict";
+//tightness = 100%
 
 let bot = require('./eventListeners.js');
 let bot1 = {},
@@ -6,7 +7,7 @@ let bot1 = {},
 let bot1Data = {},
 	bot2Data = {};
 
-function outputTemplate(botData) {
+function outputTemplate(botData) { //template for outputting to the DOM
 	let template = `
 		<h1>${botData.names}</h1>
 		<h3>${botData.class} ${botData.type}</h3>
@@ -16,19 +17,17 @@ function outputTemplate(botData) {
 	return template;
 }
 
-function robot1Builder(botData) {
+function robot1Builder(botData) { //gets newly built bot and sends to dom using outputTemplate
 	botData.names = $('#robot1Name').val();
 	bot1Data = botData;
-	console.log("robot1Builder() fired", botData);
 	$('.robot1Div').html(outputTemplate(botData));
 	bot1.called = true;
 	fightBtn(); //call to check if time to unhide fight btn
 }
 
-function robot2Builder(botData) {
+function robot2Builder(botData) { //gets newly built bot and sends to dom using outputTemplate
 	botData.names = $('#robot2Name').val();
 	bot2Data = botData;
-	console.log("robot2Builder() fired", botData);
 	$('.robot2Div').html(outputTemplate(botData));
 	bot2.called = true;
 	fightBtn(); //call to check if time to unhide fight btn
@@ -42,18 +41,15 @@ function fightBtn() {
 }
 
 function fight() {
-	console.log("It's on!!");
 	bot1Attack();
 	bot2Attack();
 }
 
-function bot1Attack() {
+function bot1Attack() { //attack function to check evade and apply damage accoringly
 	let bot2Evade = evadeChecker(bot2Data.evade);
 	if (bot2Evade) {
-		console.log(`${bot1Data.names} missed!`);
 	} else {
 		bot2Data.health = bot2Data.health - bot1Data.attack;
-		console.log(`${bot1Data.names} attacked ${bot2Data.names} for ${bot1Data.attack} damage!`);
 		if (bot2Data.health <= 0) {
 			bot2Data.health = 0;
 			$('.robot2Div').html(outputTemplate(bot2Data));
@@ -66,13 +62,11 @@ function bot1Attack() {
 	}
 }
 
-function bot2Attack() {
+function bot2Attack() { //attack function to check evade and apply damage accoringly
 	let bot1Evade = evadeChecker(bot1Data.evade);
 	if (bot1Evade) {
-		console.log(`${bot2Data.names} missed!`);
 	} else {
 		bot1Data.health = bot1Data.health - bot2Data.attack;
-		console.log(`${bot2Data.names} attacked ${bot1Data.names} for ${bot2Data.attack} damage!`);
 		if (bot1Data.health <= 0) {
 			bot1Data.health = 0;
 			$('.robot1Div').html(outputTemplate(bot1Data));
@@ -84,7 +78,7 @@ function bot2Attack() {
 }
 
 
-function evadeChecker(botEvade) {
+function evadeChecker(botEvade) { // Checks value of each bot's evade and returns true/false
 	let evadeRoll = Math.floor(Math.random() * (100) + 1);
 	if (evadeRoll < botEvade) {
 		return true;

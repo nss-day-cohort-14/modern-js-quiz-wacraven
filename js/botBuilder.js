@@ -1,9 +1,6 @@
 "use strict";
 //tightness = 100%
 
-// const eventListeners = require('./eventListeners');
-// const Quiz = require('./quiz');
-
 function Robot() {
 	this.names = null;
 	this.type = null;

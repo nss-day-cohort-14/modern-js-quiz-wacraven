@@ -1,4 +1,5 @@
 "use strict";
+//tightness = 100%
 
 const jquery = require('jquery');
 const EventListeners = require('./eventListeners');
